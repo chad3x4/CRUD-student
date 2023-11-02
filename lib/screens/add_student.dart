@@ -24,7 +24,7 @@ class _AddStudentState extends State<AddStudent> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Thêm học sinh"),
+        title: const Text("Thêm sinh viên"),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -32,17 +32,20 @@ class _AddStudentState extends State<AddStudent> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(
+                height: 10.0,
+              ),
               const Center(
                 child: Text(
-                  'Thêm học sinh mới',
+                  'Thêm sinh viên mới',
                   style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.blue,
+                      fontSize: 24,
+                      color: Colors.blueGrey,
                       fontWeight: FontWeight.w500),
                 ),
               ),
               const SizedBox(
-                height: 20.0,
+                height: 40.0,
               ),
               TextField(
                   controller: _studentNameController,
@@ -93,7 +96,7 @@ class _AddStudentState extends State<AddStudent> {
                         : null,
                   )),
               const SizedBox(
-                height: 20.0,
+                height: 30.0,
               ),
               Row(
                 children: [
@@ -102,8 +105,8 @@ class _AddStudentState extends State<AddStudent> {
                     child: TextButton(
                         style: TextButton.styleFrom(
                             foregroundColor: Colors.white,
-                            backgroundColor: Colors.blue,
-                            textStyle: const TextStyle(fontSize: 20)),
+                            backgroundColor: Colors.redAccent,
+                            textStyle: const TextStyle(fontSize: 18)),
                         onPressed: () async {
                           setState(() {
                             _studentNameController.text.isEmpty
@@ -140,8 +143,8 @@ class _AddStudentState extends State<AddStudent> {
                     child: TextButton(
                         style: TextButton.styleFrom(
                             foregroundColor: Colors.white,
-                            backgroundColor: Colors.red,
-                            textStyle: const TextStyle(fontSize: 20)),
+                            backgroundColor: Colors.blueGrey,
+                            textStyle: const TextStyle(fontSize: 18)),
                         onPressed: () {
                           _studentNameController.text = '';
                           _studentAddrController.text = '';

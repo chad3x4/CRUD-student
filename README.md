@@ -1,1 +1,1 @@
-<img src="homepage.jpg" alt="Homepage" width="300">
+<img src="cover.jpg" alt="Homepage" width="300">

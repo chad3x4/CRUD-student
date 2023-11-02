@@ -43,15 +43,20 @@ class _EditStudentState extends State<EditStudent> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Cập nhật thông tin',
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.blue,
-                    fontWeight: FontWeight.w500),
+              const SizedBox(
+                height: 10.0,
+              ),
+              const Center(
+                child: Text(
+                  'Cập nhật thông tin',
+                  style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.blueGrey,
+                      fontWeight: FontWeight.w500),
+                ),
               ),
               const SizedBox(
-                height: 20.0,
+                height: 40.0,
               ),
               TextField(
                   controller: _studentNameController,
@@ -102,61 +107,64 @@ class _EditStudentState extends State<EditStudent> {
                         : null,
                   )),
               const SizedBox(
-                height: 20.0,
+                height: 30.0,
               ),
               Row(
                 children: [
-                  TextButton(
-                      style: TextButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.blue,
-                          textStyle: const TextStyle(fontSize: 15)),
-                      onPressed: () async {
-                        setState(() {
-                          _studentNameController.text.isEmpty
-                              ? _validateName = true
-                              : _validateName = false;
-                          _studentAddrController.text.isEmpty
-                              ? _validateAddr = true
-                              : _validateAddr = false;
-                          _studentClassController.text.isEmpty
-                              ? _validateClass = true
-                              : _validateClass = false;
-                          _studentGPAController.text.isEmpty
-                              ? _validateGPA = true
-                              : _validateGPA = false;
-                        });
-                        if (_validateName == false &&
-                            _validateAddr == false &&
-                            _validateClass == false &&
-                            _validateGPA == false) {
-                          // print("Good Data Can Save");
-                          var _student = Student();
-                          _student.id=widget.student.id;
-                          _student.name = _studentNameController.text;
-                          _student.addr = _studentAddrController.text;
-                          _student.curr_class = _studentClassController.text;
-                          _student.gpa = _studentGPAController.text;
-                          var result = await _studentService.updateStudent(_student);
-                          Navigator.pop(context,result);
-                        }
-                      },
-                      child: const Text('Cập nhật')),
-                  const SizedBox(
-                    width: 10.0,
+                  Center(
+                    widthFactor: 1.8,
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            backgroundColor: Colors.redAccent,
+                            textStyle: const TextStyle(fontSize: 18)),
+                        onPressed: () async {
+                          setState(() {
+                            _studentNameController.text.isEmpty
+                                ? _validateName = true
+                                : _validateName = false;
+                            _studentAddrController.text.isEmpty
+                                ? _validateAddr = true
+                                : _validateAddr = false;
+                            _studentClassController.text.isEmpty
+                                ? _validateClass = true
+                                : _validateClass = false;
+                            _studentGPAController.text.isEmpty
+                                ? _validateGPA = true
+                                : _validateGPA = false;
+                          });
+                          if (_validateName == false &&
+                              _validateAddr == false &&
+                              _validateClass == false &&
+                              _validateGPA == false) {
+                            // print("Good Data Can Save");
+                            var _student = Student();
+                            _student.id=widget.student.id;
+                            _student.name = _studentNameController.text;
+                            _student.addr = _studentAddrController.text;
+                            _student.curr_class = _studentClassController.text;
+                            _student.gpa = _studentGPAController.text;
+                            var result = await _studentService.updateStudent(_student);
+                            Navigator.pop(context,result);
+                          }
+                        },
+                        child: const Text('Cập nhật')),
                   ),
-                  TextButton(
-                      style: TextButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.red,
-                          textStyle: const TextStyle(fontSize: 15)),
-                      onPressed: () {
-                        _studentNameController.text = '';
-                        _studentAddrController.text = '';
-                        _studentClassController.text = '';
-                        _studentGPAController.text = '';
-                      },
-                      child: const Text('Làm mới'))
+                  Center(
+                    widthFactor: 1.5,
+                    child: TextButton(
+                        style: TextButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            backgroundColor: Colors.blueGrey,
+                            textStyle: const TextStyle(fontSize: 18)),
+                        onPressed: () {
+                          _studentNameController.text = '';
+                          _studentAddrController.text = '';
+                          _studentClassController.text = '';
+                          _studentGPAController.text = '';
+                        },
+                        child: const Text('Làm mới')),
+                  )
                 ],
               )
             ],

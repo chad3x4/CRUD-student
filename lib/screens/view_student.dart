@@ -15,7 +15,7 @@ class _ViewStudentState extends State<ViewStudent> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Xem thông tin"),
+          title: const Text("Xem thông tin sinh viên"),
         ),
         body: Container(
           padding: const EdgeInsets.all(16.0),
@@ -36,7 +36,7 @@ class _ViewStudentState extends State<ViewStudent> {
                 children: [
                   const Text('Họ và tên',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.black54,
                           fontSize: 16,
                           fontWeight: FontWeight.w600)),
                   Padding(
@@ -52,7 +52,7 @@ class _ViewStudentState extends State<ViewStudent> {
                 children: [
                   const Text('Địa chỉ',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.black54,
                           fontSize: 16,
                           fontWeight: FontWeight.w600)),
                   Padding(
@@ -68,7 +68,7 @@ class _ViewStudentState extends State<ViewStudent> {
                 children: [
                   const Text('Lớp',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.black54,
                           fontSize: 16,
                           fontWeight: FontWeight.w600)),
                   Padding(
@@ -84,7 +84,7 @@ class _ViewStudentState extends State<ViewStudent> {
                 children: [
                   const Text('GPA',
                       style: TextStyle(
-                          color: Colors.blue,
+                          color: Colors.black54,
                           fontSize: 16,
                           fontWeight: FontWeight.w600)),
                   Padding(

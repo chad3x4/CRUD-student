@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Students Management',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
       home: const MyHomePage(),
     );
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
           return AlertDialog(
             title: const Text(
               'Bạn chắc chắn muốn xóa?',
-              style: TextStyle(color: Colors.blue, fontSize: 20),
+              style: TextStyle(color: Colors.black54, fontSize: 20),
             ),
             actions: [
               TextButton(
@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
               TextButton(
                   style: TextButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.blue),
+                      backgroundColor: Colors.blueGrey),
                   onPressed: () {
                     Navigator.pop(context);
                   },
@@ -124,10 +124,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 leading: const Icon(
                   Icons.person,
-                  color: Colors.blue,
+                  color: Colors.grey,
                   size: 30,
                 ),
                 title: Text(_studentList[index].name ?? '', style: const TextStyle(color: Colors.black54),),
+                subtitle: const Text("Xem chi tiết", style: TextStyle(color: Colors.black45, fontSize: 12, decoration: TextDecoration.underline),),
                 trailing: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -151,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           },
                         child: const Text(
                           'Sửa',
-                          style: TextStyle(color: Colors.cyan, fontSize: 13),
+                          style: TextStyle(color: Colors.black38, fontSize: 13),
                         ),
                       ),
                     ),
