@@ -1,9 +1,9 @@
-import 'package:connectdb/db_helper/database_connection.dart';
+import 'package:connectdb/db_utils/database_connection.dart';
 import 'package:sqflite/sqflite.dart';
 
-class Repository {
+class Operations {
   late DatabaseConnection _databaseConnection;
-  Repository() {
+  Operations() {
     _databaseConnection= DatabaseConnection();
   }
   static Database? _database;
@@ -25,15 +25,15 @@ class Repository {
   }
   readDataById(table, itemId) async {
     var connection = await database;
-    return await connection?.query(table, where: 'id=?', whereArgs: [itemId]);
+    return await connection?.query(table, where: 'id = ?', whereArgs: [itemId]);
   }
   updateData(table, data) async {
     var connection = await database;
-    return await connection?.update(table, data, where: 'id=?',
+    return await connection?.update(table, data, where: 'id = ?',
         whereArgs: [data['id']]);
   }
   deleteDataById(table, itemId) async {
     var connection = await database;
-    return await connection?.rawDelete("delete from $table where id=$itemId");
+    return await connection?.rawDelete("DELETE FROM $table WHERE id = $itemId");
   }
 }

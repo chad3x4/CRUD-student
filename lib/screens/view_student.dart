@@ -1,4 +1,4 @@
-import 'package:connectdb/model/Student.dart';
+import 'package:connectdb/model/student.dart';
 import 'package:flutter/material.dart';
 
 class ViewStudent extends StatefulWidget {

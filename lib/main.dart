@@ -1,8 +1,8 @@
-import 'package:connectdb/model/Student.dart';
-import 'package:connectdb/screens/EditStudent.dart';
-import 'package:connectdb/screens/AddStudent.dart';
-import 'package:connectdb/screens/ViewStudent.dart';
-import 'package:connectdb/services/studentService.dart';
+import 'package:connectdb/model/student.dart';
+import 'package:connectdb/screens/edit_student.dart';
+import 'package:connectdb/screens/add_student.dart';
+import 'package:connectdb/screens/view_student.dart';
+import 'package:connectdb/services/student_service.dart';
 import 'package:flutter/material.dart';
 
 void main() {

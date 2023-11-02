@@ -1,11 +1,11 @@
-import 'package:connectdb/db_helper/repository.dart';
-import 'package:connectdb/model/Student.dart';
+import 'package:connectdb/db_utils/operations.dart';
+import 'package:connectdb/model/student.dart';
 
 class StudentService
 {
-  late Repository _repository;
+  late Operations _repository;
   StudentService(){
-    _repository = Repository();
+    _repository = Operations();
   }
   //Save User
   saveStudent(Student student) async{

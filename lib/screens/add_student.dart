@@ -1,7 +1,7 @@
-import 'package:connectdb/model/Student.dart';
+import 'package:connectdb/model/student.dart';
 import 'package:flutter/material.dart';
 
-import '../services/studentService.dart';
+import '../services/student_service.dart';
 
 class AddStudent extends StatefulWidget {
   const AddStudent({Key? key}) : super(key: key);
